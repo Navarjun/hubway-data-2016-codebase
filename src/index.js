@@ -45,7 +45,7 @@ const gender = {};
 gender.svg = d3.select("#gender-svg")
     .attr("width", function() { return this.parentNode.clientWidth; })
     .attr("height", window.innerHeight/4);
-gender.margin = {left: 50, top: 50, right: 50, bottom: 50};
+gender.margin = {left: 55, top: 50, right: 50, bottom: 50};
 gender.canvas = { width: gender.svg.attr("width")-gender.margin.left-gender.margin.right, height: gender.svg.attr("height")-gender.margin.top-gender.margin.bottom };
 gender.plot = gender.svg.append("g").attr("transform", `translate(${gender.margin.left},${gender.margin.top})`);
 const age = {};
