@@ -1,0 +1,120 @@
+body, html {
+    margin: 0px;
+    padding: 0px;
+    background: #1D2041;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h1.title {
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+p {
+    color: white;
+}
+a {
+    color: rgba(255, 255, 255, 0.6);
+}
+section {
+    margin-bottom: 50px;
+}
+#timeseries-y-axis {
+    display: inline-block;
+}
+#buttons {
+    margin-bottom: 20px;
+}
+.btn {
+    padding: 5px;
+    border: 0 none;
+    font-size: 14px;
+    /*font-weight: 700;*/
+    background: none;
+    color: rgb(180, 180, 250);
+    /*text-transform: uppercase;*/
+}
+.btn.active {
+    color: rgb(180, 180, 250);
+    font-size: 14px;
+    border-bottom: 2px solid rgb(180, 180, 250);
+}
+.btn:hover {
+    background: none;
+    color: rgb(180, 180, 250);
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+    background: none;
+    color: rgb(180, 180, 250);
+    font-size: 14px;
+    border-bottom: 2px solid rgb(180, 180, 250);
+}
+
+.lead {
+    color: white;
+}
+svg {
+    background: #1D2041;
+}
+
+.color-box {
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.color-box.subscriber {
+    background: rgba(170, 255, 170, 0.6);
+}
+.color-box.casual {
+    background: rgba(170, 170, 255, 0.6);
+}
+
+g.timeseries g.commulative path {
+    fill: none;
+    stroke: white;
+    stroke-width: 1;
+}
+
+g.timeseries g.breakdown g.userTypeSubscriber path {
+    fill: rgba(170, 255, 170, 0.6);
+    stroke: none;
+}
+g.timeseries g.breakdown g.userTypeCustomer path {
+    fill: rgba(170, 170, 255, 0.6);
+    stroke: none;
+}
+
+g.barChart rect {
+    fill: rgba(255, 255, 255, 0.6);
+}
+
+g.arcDiagram path {
+    fill: none;
+    stroke: rgba(120, 120, 170, 0.6);
+    stroke-width: 1;
+    mix-blend-mode: screen;
+}
+
+g.axis path {
+    stroke: none;
+}
+g.axis g.tick text {
+    fill: #557;
+    font-size: 1.2em;
+}
+/*g.timeseries g.axisX g.tick line {
+    stroke: none;
+}*/
+g.axis g.tick line {
+    stroke-dasharray: 1, 5;
+    stroke-linecap:round;
+    stroke: #557;
+}

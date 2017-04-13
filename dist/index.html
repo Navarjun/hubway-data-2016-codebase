@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+	</head>
+	<body>
+		<div class='container'>
+            <section>
+                <h1 class="title">A year of a bike</h1>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="col-sm-12">
+                            This project tries to explore the data of one randomly-choosen Hubway bike.
+                            The data contains all the trips from 2016 for just one bike.
+                            Everytime you refresh the page you will find a new randomly selected bike's data visualised.
+                            <br /><br />
+                            <span>
+                                If you find this bike to be interesting and would like to share the current page, you can definitely do that by clicking: <button class="btn" id="share">Share</button>.
+                                <br />
+                                Let me know if you do, because I would also like to find interesting bikes :)
+                                <br />
+                                Twitter: <a href="http://twitter.com/navarjun">@Navarjun</a>
+                            </span>
+                        </p>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <p style="text-align: center;">This bike did</p>
+                        <h1 id="total-trips">Loading Data…</h1>
+                        <p style="text-align: center;">trips in 2016</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="municipality-section">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="lead">Municipality Exchange</p>
+                        <p class="col-sm-6">
+                            Each arc in this arc-diagram is a representation of one trip taken by the bike. The height of the arc represents the duration of the trip, and beginning and ending points represent the municipality the bike went into.
+                        </p>
+                        <svg id="municipality-svg"></svg>
+                    </div>
+                </div>
+            </section>
+
+            <section id="timeseries-section">
+                <p class="lead">Bike Trips Timeline</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="col-sm-12">
+                            The following line chart represents the timeline of the bike. <br />
+                            The x-axis at the bottom shows the week of the year. The y-axis on the left represents number of trips or duration depending on your selection.
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p id="buttons">
+                            Y axis:
+                            <span class="btn-group btn-group" role="group" id="timeseries-y-axis">
+                                <button type="button" class="btn" data-key="duration">Duration</button>
+                                <button type="button" class="btn active" data-key="number">Number of Trips</button>
+                            </span>
+                        </p>
+                        <p>
+                            <span class="color-box subscriber"></span>Subscriber
+                            <span class="color-box casual"></span>Casual
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <svg id="timeline-svg"></svg>
+                </div>
+            </section>
+
+            <section id="comparison-section">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <span class="lead">Overall Gender Comparison</span>
+                        <svg id="gender-svg"></svg>
+                    </div>
+                    <div class="col-sm-6">
+                        <span class="lead">Age Comparison</span>
+                        <svg id="age-svg"></svg>
+                    </div>
+                </div>
+            </section>
+
+            <section id="footnote-section">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="lead">Credits</p>
+                        <p>
+                            The code for this visualisation is publically available on <a href="https://github.com/Navarjun/hubway-data-2016-codebase">github</a>.<br/>
+                        </p>
+                        <p>
+                            This visualisation is done by Navarjun.<br/>
+                            Liuhuaying Yang helped with data interpretation of gender codes within the data.
+                            To know more about his other works or to get in touch, visit his website: <a href="http://navarjun.com">navarjun.com</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+		</div>
+		<script src='./assets/bundle.js' type='text/javascript'></script>
+	</body>
+</html>
