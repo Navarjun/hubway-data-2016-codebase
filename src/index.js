@@ -36,7 +36,7 @@ const timeline = {};
 timeline.svg = d3.select("#timeline-svg")
     .attr("width", function() { return this.parentNode.clientWidth; })
     .attr("height", window.innerHeight/3);
-timeline.margin = { left: 50, top: 50, right: 50, bottom: 50 };
+timeline.margin = { left: 70, top: 50, right: 50, bottom: 50 };
 timeline.canvas = { width: timeline.svg.attr("width")-timeline.margin.left-timeline.margin.right, height: timeline.svg.attr("height")-timeline.margin.top-timeline.margin.bottom };
 timeline.plot = timeline.svg.append("g").attr("transform", `translate(${timeline.margin.left},${timeline.margin.top})`);
 //-----------------
@@ -59,7 +59,7 @@ const municipality = {};
 municipality.svg = d3.select("#municipality-svg")
     .attr("width", function() { return this.parentNode.clientWidth; })
     .attr("height", window.innerHeight/2);
-municipality.margin = {left: 50, top: 50, right: 50, bottom: 50};
+municipality.margin = {left: 70, top: 50, right: 50, bottom: 50};
 municipality.canvas = { width: municipality.svg.attr("width")-municipality.margin.left-municipality.margin.right, height: municipality.svg.attr("height")-municipality.margin.top-municipality.margin.bottom };
 municipality.plot = municipality.svg.append("g").attr("transform", `translate(${municipality.margin.left},${municipality.margin.top})`);
 
@@ -106,7 +106,7 @@ const tripsParse = function(d, i) {
     dateArray = d.stoptime.split(" ");
     dateArray = dateArray[0].split("-").concat(dateArray[1].split(":"));
     const endDate = new Date(dateArray[0], dateArray[1]-1, dateArray[2], dateArray[3], dateArray[4], dateArray[5]);
-    
+
     return {
         duration: d.tripduration,
         startDate: startDate,

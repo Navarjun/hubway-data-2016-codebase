@@ -117,7 +117,7 @@ function createLineChart(data, plot, canvasSize) {
         if (yaxis == "duration") {
             const minStep = scaleY.domain()[1]/5;
             const step = parseInt(minStep) + parseInt(parseInt(minStep)/(60*60));
-            axisY.tickFormat(d=>(Math.round(d/(60*60)))+" hours")
+            axisY.tickFormat(d=>((d/(60*60)).toFixed(2))+" hours")
                 .tickValues(d3.range(0, scaleY.domain()[1], step));
         }
 
