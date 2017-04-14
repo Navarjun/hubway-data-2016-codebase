@@ -80,7 +80,7 @@ dataloader
             dataloader.loadJson("./processedData/bike_"+urlParams.bikeid+"_2016.json");
             d3.select("#share")
                 .on("click", function() {
-                    copyToClipboard(window.location.href)
+                    copyToClipboard(window.location.href);
                 });
         } else {
             const selectedBikeId = selectRandomBike();
@@ -100,10 +100,17 @@ function selectRandomBike() {
 
 //seq_id,hubway_id,status,duration,start_date,strt_statn,end_date,end_statn,bike_nr,subsc_type,zip_code,birth_date,gender
 const tripsParse = function(d, i) {
+    let dateArray = d.starttime.split(" ");
+    dateArray = dateArray[0].split("-").concat(dateArray[1].split(":"));
+    const startDate = new Date(dateArray[0], dateArray[1]-1, dateArray[2], dateArray[3], dateArray[4], dateArray[5]);
+    dateArray = d.stoptime.split(" ");
+    dateArray = dateArray[0].split("-").concat(dateArray[1].split(":"));
+    const endDate = new Date(dateArray[0], dateArray[1]-1, dateArray[2], dateArray[3], dateArray[4], dateArray[5]);
+    
     return {
         duration: d.tripduration,
-        startDate: new Date(d.starttime),
-        endDate: new Date(d.stoptime),
+        startDate: startDate,
+        endDate: endDate,
         startStation: +d["start station id"],
         endStation: +d["end station id"],
         bikeId: d.bikeid,

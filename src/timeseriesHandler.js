@@ -85,12 +85,11 @@ function createLineChart(data, plot, canvasSize) {
 
         const timeseriesArea = areaChart()
             .x(d=>scaleX(d.key))
-            .y1(d=>scaleY(d.curr))
-            .y0(d=>scaleY(d.prev));
+            .y1(d=>scaleY(+d.curr))
+            .y0(d=>scaleY(+d.prev));
 
         const breakdownGs = breakdown.selectAll("g")
             .data(breakdownNest);
-
         breakdownGs.exit().transition().remove();
         const paths = breakdownGs.enter()
             .append("g")
